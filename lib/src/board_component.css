@@ -1,0 +1,55 @@
+.board-container {
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.board {
+  background-color: rgba(244, 230, 183, 0.7);
+  box-shadow: 20px 20px 50px rgba(30, 40, 13, 0.5);
+}
+
+.row {
+  display: flex;
+  width: 450px;
+  height: 50px;
+}
+
+.row-end {
+  border-bottom: 3px solid black;
+}
+
+.field {
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
+  border-collapse: collapse;
+  font-size: 40px;
+  text-align: center;
+}
+
+.col-end {
+  border-right: 3px solid black;
+}
+
+.number-input {
+  width: 40px;
+  font-size: 40px;
+}
+
+.buttons {
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+}
+.buttons > button {
+  margin: 0 20px;
+}
+
+.message {
+  height: 40px;
+  font-size: 18px;
+}

@@ -1,0 +1,27 @@
+<div class="board-container" (keydown)="onKey($event)">
+  <div class="message">{{message}}</div>
+  <div class="board">
+    <div class="row" *ngFor="let row of fields; let r = index" [class.row-end]="r == 2 || r == 5">
+      <div
+        class="field"
+        *ngFor="let field of row; let c = index"
+        [class.col-end]="c == 2 || c == 5"
+        (click)="setActive(r, c)"
+      >
+        <input
+          *ngIf="isActive(r, c)"
+          class="number-input"
+          [ngModel]="fields[r][c]"
+          (ngModelChange)="setFieldValue(r, c, $event)"
+          [autofocus]
+          [attr.maxlength]="1"
+        >
+        <span *ngIf="!isActive(r, c)">{{field}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="buttons">
+    <button (click)="clearBoard()">clear</button>
+    <button (click)="solve()">solve</button>
+  </div>
+</div>
